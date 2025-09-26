@@ -1,6 +1,15 @@
 import { dashboard, login, register } from '@/routes';
 import { type SharedData } from '@/types';
 import { Head, Link, usePage } from '@inertiajs/react';
+import { Facebook } from 'lucide-react';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export default function Welcome() {
     const { auth } = usePage<SharedData>().props;
@@ -43,10 +52,54 @@ export default function Welcome() {
                     </nav>
                 </header>
                 <div className="flex w-full items-center justify-center opacity-100 transition-opacity duration-750 lg:grow starting:opacity-0">
-                    <main>
-                        <p className="text-9xl text text-white">
-                            Welcome
-                        </p>
+                    <main className='flex flex-col items-center justify-center gap-2'>
+                       <Card className='w-[350px] md:w-[500px] lg:w-[700px]'>
+                            <CardHeader className='gap-2'>
+                                <CardTitle className='text-xl'>About Us</CardTitle>
+                                <CardDescription>
+                                    The <strong>College of Computing Education</strong> maintains its reputation as one of the best computer schools in the region through its PACUCOA Level III accredited programs as well as being a certified Center of Development. The college is composed of highly qualified faculty members who are skilled and equipped with the updated skills in different fields of computer studies.
+                                </CardDescription>
+                                <CardContent>
+                                    <img src="hero.jpg" alt="" />
+                                </CardContent>
+                            </CardHeader>
+                        </Card>
+                        <Card className='w-[350px] md:w-[500px] lg:w-[700px]'>
+                            <CardHeader>
+                                <CardTitle className='text-xl'>Programs Offered:</CardTitle>
+                                <CardDescription>
+                                    <ul>
+                                        <li>Bachelor of Science in Information Technology</li>
+                                        <li>Bachelor of Science in Computer Science</li>
+                                        <li>Bachelor of Science in Information Systems</li>
+                                        <li>Bachelor of Library and Information Science</li>
+                                        <li>Bachelor of Science in Entertainment and Multimedia Computing – Digital Animation</li>
+                                        <li>Bachelor of Science in Entertainment and Multimedia Computing – Game Development</li>
+                                        <li>Bachelor of Multimedia Arts</li>
+                                    </ul>
+                                </CardDescription>
+                            </CardHeader>
+                        </Card>
+                        <Card className='w-[350px] md:w-[500px] lg:w-[700px]'>
+                            <CardHeader>
+                                <CardTitle className='text-xl'>Why Choose CCE?</CardTitle>
+                                <CardDescription>
+                                    The UM College of Computing Education (CCE) stands at the forefront of technological innovation, offering students a cutting-edge curriculum that bridges the gap between theory and real-world application. With over 95% of graduates securing employment within six months of graduation, CCE is known for its rigorous academic programs, top-tier faculty, and strong industry partnerships with leading tech companies like Google, Microsoft, and IBM. Students benefit from hands-on experience through internships, research projects, and collaborative initiatives that provide them with the skills needed to excel in the rapidly evolving tech landscape. Choose CCE, where opportunities are limitless, and the future of technology begins.
+                                </CardDescription>
+                            </CardHeader>
+                        </Card>
+                        <Card className='w-[350px] md:w-[500px] lg:w-[700px]'>
+                            <CardHeader>
+                                <CardTitle className='text-xl'>CCE Socials</CardTitle>
+                                <CardDescription className='hover:underline'>
+                                    <Link href={"https://www.facebook.com/umccecsg"}>
+                                        <div className='flex items-center gap-2'>
+                                            <Facebook /> UM CCE CSG
+                                        </div>
+                                    </Link>
+                                </CardDescription>
+                            </CardHeader>
+                        </Card>
                     </main>
                 </div>
                 <div className="hidden h-14.5 lg:block"></div>
