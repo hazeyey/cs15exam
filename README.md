@@ -1,5 +1,4 @@
-CS15 Laboratory 2
-
+CS15 Lab Exam
 Requires node.js, php, and composer
 
 Setup:
