@@ -15,14 +15,10 @@ type DashboardProps = {
         id: number;
         name: string;
         email: string;
-        gender: string;
-        hobbies?: string[];
-        country: string;
     };
 }
 
 export default function Dashboard({ user }: DashboardProps) {
-    const hobbies = user.hobbies ?? []
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
             <Head title="Dashboard" />

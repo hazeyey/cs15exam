@@ -23,7 +23,7 @@ export default function AuthCardLayout({
         <div
             className="flex min-h-svh flex-col items-center justify-center bg-cover bg-center p-6 md:p-10"
             style={{
-                backgroundImage: "url('/hero.jpg')", 
+                backgroundImage: "url('/hero.png')", 
             }}
         >
             <div className="flex w-full max-w-md flex-col gap-6">

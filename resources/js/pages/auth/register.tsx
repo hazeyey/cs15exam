@@ -10,35 +10,8 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import AuthLayout from '@/layouts/auth-layout';
-import { Combobox } from '@/components/ui/combobox';
-import { MultiSelectCombobox } from '@/components/ui/multicombobox';
-
-
-const countries = [
-    { value: "usa", label: "United States" },
-    { value: "canada", label: "Canada" },
-    { value: "uk", label: "United Kingdom" },
-    { value: "australia", label: "Australia" },
-    { value: "germany", label: "Germany" },
-    { value: "france", label: "France" },
-    { value: "japan", label: "Japan" },
-    { value: "philippines", label: "Philippines" },
-]
-
-const gender = [
-    {value: "male", label: "Male"},
-    {value: "female", label: "Female"},
-    {value: "other", label: "Other"},
-]
-
-const hobbies = [
-    { value: "music", label: "Music" },
-    { value: "sports", label: "Sports" },
-    { value: "reading", label: "Reading" },
-]
 
 export default function Register() {
-    const [selectedHobbies, setSelectedHobbies] = React.useState<string[]>([])
 
     return (
         <AuthLayout
@@ -118,45 +91,6 @@ export default function Register() {
                                     message={errors.password_confirmation}
                                 />
                             </div>
-
-                            <div className="grid gap-2">
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div>
-                                        <Label htmlFor="gender">
-                                            Gender
-                                        </Label>
-                                        <Combobox
-                                            items={gender}
-                                            name="gender"
-                                            placeholder="Select gender..."
-                                            onChange={(val) => console.log("Selected:", val)}
-                                        />
-                                    </div>
-                                    <div>
-                                        <Label htmlFor="country">
-                                            Country
-                                        </Label>
-                                        <Combobox
-                                            items={countries}
-                                            name="country"
-                                            placeholder="Select country..."
-                                            onChange={(val) => console.log("Selected:", val)}
-                                        />
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="grid gap-2">
-                            <Label htmlFor="hobbies">Hobbies</Label>
-                            <MultiSelectCombobox
-                                items={hobbies}
-                                name="hobbies[]"
-                                selected={selectedHobbies}
-                                onChange={setSelectedHobbies}
-                                placeholder="Select hobbies..."
-                            />
-                            </div>
-
 
                             <Button
                                 type="submit"
